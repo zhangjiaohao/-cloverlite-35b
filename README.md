@@ -3,10 +3,14 @@
 基于 [Strata](https://github.com/Niko1221/Strata) 的 Clover-35B-A3B Q4_K_M 本地推理实验：使用有限的 GPU 显存与主机内存，探索 MoE 模型的因果推理、块扩散与专家缓存优化，并提供本地 Web 聊天界面。
 
 > **研发状态：实验项目。** 纯扩散、AR 和扩散草稿验证具有不同语义。本项目尚未在 12 GB 显存机器上实现或验证稳定的 120+ tokens/s 块扩散；输出质量、长上下文及官方后端的整模型数值对齐仍在研究中。
+>
+> 
 > clover原生模型未做优化版的生成速度：
 > <img width="922" height="668" alt="截屏2026-11-03 14 29 28" src="https://github.com/user-attachments/assets/e9d55c1e-7953-4157-a2cf-ef3f968c1ae8" />
+>
+> 
 > 本方案生成速度：
-<img width="1425" height="804" alt="截屏2026-11-03 14 43 05" src="https://github.com/user-attachments/assets/82452087-42bb-4e62-b113-8f57bd21fe0b" />
+
 <img width="1176" height="802" alt="截屏2026-11-03 14 41 27" src="https://github.com/user-attachments/assets/1dd0a56c-e205-4988-b142-993a3c25231e" />
 
 
