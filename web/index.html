@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light dark"><title>Clover · 本地对话</title>
+  <link rel="stylesheet" href="/strata/tokens.css"><link rel="stylesheet" href="/strata/components.css"><link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-mark">✳</div><div><strong>Clover</strong><small>LOCAL INTELLIGENCE</small></div></div>
+    <nav class="nav-switch" aria-label="页面"><button id="nav-chat" class="nav-item active" type="button">◉ <span>对话</span></button><button id="nav-monitor" class="nav-item" type="button">▥ <span>资源监控</span></button></nav>
+    <button class="new-chat" id="new-chat"><span>＋</span> 新建对话 <kbd>⌘ K</kbd></button>
+    <div class="sidebar-label">当前会话 <span>LOCAL</span></div>
+    <div class="session-item"><span class="session-dot"></span><span id="session-name">新对话</span><span class="session-more">···</span></div>
+    <div class="sidebar-bottom"><div class="model-tile"><span class="model-icon">✳</span><div><b>Clover 35B A3B</b><small>Q4_K_M · 本地运行</small></div><span class="model-dot"></span></div><div class="sidebar-foot">基于 Strata 引擎 <span>↗</span></div></div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div class="top-title"><span class="crumb">工作区</span><span class="slash">/</span><strong id="page-title">对话</strong></div><div class="top-actions"><button class="icon-btn mobile-monitor" id="mobile-monitor" title="资源监控" aria-label="资源监控">▥</button><button class="icon-btn mobile-new" id="mobile-new" title="新建对话" aria-label="新建对话">＋</button><span class="status" id="status"><i></i><span>正在连接</span></span><button class="icon-btn" id="theme" title="切换明暗主题" aria-label="切换明暗主题">◐</button></div></header>
+    <div id="chat-view" class="chat-view">
+    <div class="notice"><span>✦</span><p><b>实验模式</b><em></em><span id="mode-description">因果生成：逐 token 输出。</span></p></div>
+    <div class="viewport" id="viewport">
+      <section class="welcome" id="welcome"><div class="welcome-icon">✳</div><div class="eyebrow"><span></span> YOUR LOCAL AI WORKSPACE</div><h1>你好，今天想聊什么？</h1><p>你的想法留在这里。Clover 在这台机器上运行，<br class="desktop">可以帮你思考、写作和探索新问题。</p>
+        <div class="suggestions"><button data-prompt="用简单的话解释什么是混合专家模型。"><span>✳</span><b>探索概念</b><small>用简单的话解释混合专家模型</small><i>↗</i></button><button data-prompt="帮我写一段 Python 代码，计算斐波那契数列。"><span>⌘</span><b>写点代码</b><small>用 Python 计算斐波那契数列</small><i>↗</i></button><button data-prompt="请帮我制定一个高效学习新知识的方法。"><span>◈</span><b>整理思路</b><small>制定一个高效的学习方法</small><i>↗</i></button></div>
+      </section>
+      <section class="conversation" id="conversation" aria-live="polite"></section>
+    </div>
+    <div class="composer-area"><form id="form" class="composer"><textarea id="input" rows="1" placeholder="给 Clover 发送消息…" aria-label="输入消息"></textarea><div class="composer-bottom"><div class="composer-info"><span class="mini-dot"></span> Clover 35B <span class="sep">·</span> 本地对话</div><div class="composer-actions"><label class="generation-mode">生成模式 <select id="generation-mode" aria-label="生成模式"><option value="ar">AR 因果</option><option value="diffusion">块扩散（实验）</option><option value="diffusion_spec">扩散草稿 + 验证（实验）</option></select></label><label class="diffusion-option" id="threshold-label" hidden>去噪轮数 <select id="diffusion-steps" aria-label="扩散去噪轮数"><option value="32">标准（最多 32 轮）</option></select></label><label class="diffusion-option" id="spec-label" hidden>草稿验证 <select id="spec-accept" aria-label="草稿验证方式"><option value="entropy">熵阈值（官方）</option><option value="exact">严格匹配</option></select></label><label class="diffusion-option" id="minimum-label" title="达到这个 token 数之前暂不接受结束符；可能影响回答结尾。写约 2000 个中文字可先试 1400 tokens，字数与 tokens 不等同。" hidden>最少输出 <input id="min-tokens" type="number" min="0" max="4096" value="0" step="1" aria-label="最少输出 tokens"></label><label class="output-limit">输出上限 <input id="max-tokens" type="number" min="1" max="4096" value="2048" step="1" aria-label="单次最大输出 tokens"> <span>tokens</span></label><span class="shortcut">Enter 发送 · Shift + Enter 换行</span><button type="button" id="stop" class="stop" hidden>停止生成</button><button type="submit" id="send" class="send" aria-label="发送消息">↑</button></div></div></form><div class="disclaimer"><span>✳</span> 内容由 AI 生成，请核实重要信息。<span id="perf"></span></div></div>
+    </div>
+    <section id="monitor-view" class="monitor-view" hidden>
+      <div class="monitor-head"><div><div class="eyebrow monitor-eyebrow"><span></span> SYSTEM OVERVIEW</div><h1>资源监控</h1><p>查看当前显卡和内存的实时使用情况。</p></div><span class="live-badge"><i></i> 实时更新</span></div>
+      <div class="metrics-grid">
+        <article class="metric-card"><div class="metric-top"><span class="metric-icon">▥</span><span class="metric-tag">GPU</span></div><h2>显存占用</h2><div class="metric-value" id="gpu-memory">—</div><div class="metric-sub" id="gpu-name">正在读取…</div><div class="meter"><div id="gpu-memory-bar"></div></div><div class="metric-foot"><span>显卡显存</span><span id="gpu-memory-percent">—</span></div></article>
+        <article class="metric-card"><div class="metric-top"><span class="metric-icon">◈</span><span class="metric-tag">GPU</span></div><h2>GPU 利用率</h2><div class="metric-value" id="gpu-util">—</div><div class="metric-sub" id="gpu-temp">计算负载</div><div class="meter"><div id="gpu-util-bar"></div></div><div class="metric-foot"><span>当前计算负载</span><span id="gpu-util-percent">—</span></div></article>
+        <article class="metric-card"><div class="metric-top"><span class="metric-icon">▤</span><span class="metric-tag">MEMORY</span></div><h2>容器内存占用</h2><div class="metric-value" id="container-memory">—</div><div class="metric-sub">包含容器文件缓存</div><div class="meter"><div id="container-memory-bar"></div></div><div class="metric-foot"><span>容器内存上限</span><span id="container-memory-percent">—</span></div></article>
+        <article class="metric-card"><div class="metric-top"><span class="metric-icon">◫</span><span class="metric-tag">HOST</span></div><h2>宿主机内存</h2><div class="metric-value" id="host-memory">—</div><div class="metric-sub" id="host-memory-available">正在读取…</div><div class="meter"><div id="host-memory-bar"></div></div><div class="metric-foot"><span>宿主机已用 / 总量</span><span id="host-memory-percent">—</span></div></article>
+      </div><div class="monitor-note"><b>关于内存统计</b><p>容器内存包含文件缓存，可能与模型进程实际占用不同；宿主机内存不等于当前容器可用额度。GPU 数值为整张显卡的占用。</p></div><div class="monitor-updated" id="metrics-updated">等待数据…</div>
+    </section>
+  </main>
+</div>
+<script src="/app.js" defer></script>
+</body></html>

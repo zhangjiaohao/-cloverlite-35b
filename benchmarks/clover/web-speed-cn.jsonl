@@ -1,0 +1,2 @@
+{"run": 1, "committed_tokens": 69, "decode_steps": 68, "decode_ms": 746.7, "decode_tokens_per_s": 91.07, "prefill_ms": 176.0, "total_s": 0.926, "finish": "stop", "answer": "工作原理：每次前向传播时，门控网络为每个 token 选择少数专家计算，再按权重加权求和。优点：参数规模可很大而计算量可控；缺点：训练不稳定、专家可能退化、路由策略影响性能。推理优化：动态专家选择、缓存专家计算、并行调度与量化。"}
+{"median_decode_tokens_per_s": 91.07}

@@ -1,0 +1,12 @@
+          width invariance (1 vs 3 tokens): gate/up 0, down 0 rows differ
+          q4_K gate rows, AVX2 multi-token vs ggml vec_dot: 0 of 36 token-sets differ in any bit; 4 tokens one thread 166 us vs ggml 212 us (1.28x)
+          gpu decode-once vs per-entry kernels: bitwise equal
+          GPU dequant vs ggml to_float: rel 0.00e+00, 0 of 3145728 values differ in any bit; fp16 of it: 0 differ; embedding rows: 0 of 512 differ
+layer 0   q4_K    /q6_K    blob  2039808  cpu rel 1.65e-02  gpu rel 9.93e-03  cpu-gpu 1.84e-02  ok
+          width invariance (1 vs 3 tokens): gate/up 0, down 0 rows differ
+          q4_K gate rows, AVX2 multi-token vs ggml vec_dot: 0 of 36 token-sets differ in any bit; 4 tokens one thread 171 us vs ggml 210 us (1.23x)
+          q4_K down rows, AVX2 multi-token vs ggml vec_dot: 0 of 36 token-sets differ in any bit; 4 tokens one thread 239 us vs ggml 266 us (1.11x)
+          gpu decode-once vs per-entry kernels: bitwise equal
+          GPU dequant vs ggml to_float: rel 0.00e+00, 0 of 3145728 values differ in any bit; fp16 of it: 0 differ; embedding rows: 0 of 512 differ
+layer 5   q4_K    /q4_K    blob  1769472  cpu rel 1.56e-02  gpu rel 1.07e-02  cpu-gpu 1.78e-02  ok
+native_expert_parity: 0 failures

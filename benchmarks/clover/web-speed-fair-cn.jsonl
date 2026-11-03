@@ -1,0 +1,2 @@
+{"run": 1, "committed_tokens": 51, "decode_steps": 50, "decode_ms": 448.0, "decode_tokens_per_s": 111.61, "prefill_ms": 193.5, "total_s": 0.646, "finish": "stop", "answer": "工作原理：多个专家网络加一个门控网络，门控决定每个token由哪些专家处理。优点：参数规模可扩展、计算效率高；缺点：训练不稳定、专家崩溃。推理优化：动态路由、专家缓存、并行调度。"}
+{"median_decode_tokens_per_s": 111.61}

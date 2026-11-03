@@ -1,0 +1,12 @@
+strata Clover routes: block=1 layers=40 round_pairs=1200 adjacent_intersection=27086 adjacent_union=32696 first_hits=188503 later_entries=307200 gpu_entries=260015 total_entries=317440 union_experts=2224 fixed=0
+strata Clover routes: block=2 layers=40 round_pairs=1240 adjacent_intersection=24125 adjacent_union=29072 first_hits=213974 later_entries=317440 gpu_entries=312290 total_entries=327680 union_experts=1891 fixed=0
+strata Clover routes: block=3 layers=40 round_pairs=1240 adjacent_intersection=30008 adjacent_union=36436 first_hits=191781 later_entries=317440 gpu_entries=308801 total_entries=327680 union_experts=2589 fixed=0
+strata diffusion: 96 tokens, 3 blocks, 95 preview rounds, 31.67 rounds/block, 6527.3 ms total, 2316.9 ms CPU experts, 897740 GPU and 95540 CPU expert entries, threshold 0.950, steps 32, min_new 0 (length)
+strata Clover routes: block=1 layers=40 round_pairs=1160 adjacent_intersection=35201 adjacent_union=43257 first_hits=173835 later_entries=296960 gpu_entries=269416 total_entries=307200 union_experts=3007 fixed=0
+strata Clover routes: block=2 layers=40 round_pairs=1240 adjacent_intersection=41364 adjacent_union=51100 first_hits=183564 later_entries=317440 gpu_entries=306541 total_entries=327680 union_experts=3382 fixed=0
+strata Clover routes: block=3 layers=40 round_pairs=480 adjacent_intersection=8002 adjacent_union=10597 first_hits=48216 later_entries=122880 gpu_entries=80861 total_entries=133120 union_experts=1584 fixed=0
+strata diffusion: 66 tokens, 3 blocks, 75 preview rounds, 25.00 rounds/block, 5899.5 ms total, 2671.1 ms CPU experts, 673407 GPU and 115073 CPU expert entries, threshold 0.950, steps 32, min_new 0 (stop)
+strata Clover routes: block=1 layers=40 round_pairs=120 adjacent_intersection=1782 adjacent_union=4403 first_hits=15388 later_entries=30720 gpu_entries=29216 total_entries=40960 union_experts=2517 fixed=0
+strata Clover routes: block=2 layers=40 round_pairs=40 adjacent_intersection=326 adjacent_union=2294 first_hits=2169 later_entries=10240 gpu_entries=16184 total_entries=20480 union_experts=2294 fixed=0
+strata Clover routes: block=3 layers=40 round_pairs=200 adjacent_intersection=8293 adjacent_union=13919 first_hits=12628 later_entries=51200 gpu_entries=49893 total_entries=61440 union_experts=3959 fixed=0
+strata diffusion: 96 tokens, 3 blocks, 12 preview rounds, 4.00 rounds/block, 1683.4 ms total, 857.5 ms CPU experts, 107861 GPU and 35499 CPU expert entries, threshold 0.950, steps 32, min_new 0 (length)

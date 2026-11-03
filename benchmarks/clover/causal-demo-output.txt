@@ -1,0 +1,1 @@
+A mixture of experts model is a machine learning architecture that combines multiple specialized submodels, called experts, to handle different parts of the input data. A gating network dynamically routes inputs to the most appropriate experts, allowing the overall model to be more flexible and accurate than any single expert alone.

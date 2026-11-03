@@ -1,0 +1,11 @@
+Experimental causal demo; the full Clover diffusion decoder is not implemented.
+strata-q36: /root/autodl-tmp/clover/models/Clover-35B-A3B-Q4_K_M.gguf: 853 tensors (layout checked), 1.63 GiB on the GPU in 1.1 s (the routed experts are placed after the engine's buffers)
+WARNING: experimental Clover causal path; block diffusion and self-draft are not implemented
+strata: K-quant prompt kernels from /root/autodl-tmp/clover/codes/third_party/Strata/build-clover/libstrata_kq.so (STRATA_MMQ_KQ=1)
+strata-q36: prompt experts on MMQ (int8)
+strata-q36: context 1024 cells, prompt chunk 128, 8.63 GiB of VRAM free
+strata cpu pool: NUMA pool on: 2 NUMA nodes found, one slice of the pool per node (STRATA_NUMA_POOL=0 turns it off)
+strata cpu pool: NUMA split on: slice 0 = node 0 (5 threads), slice 1 = node 1 (4 threads)
+strata-q36: hybrid experts: 98 of 256 per layer in VRAM (6.96 GiB), all 18.17 GiB in pinned host memory, the rest of a batch of <= 128 rows on 9 CPU threads, bigger prompt chunks streamed (0.97 GiB staging); 21.2 s
+strata-q36: prompt 25 tokens in 600.5 ms (41.6 tok/s), 58 generated in 631.3 ms (90.3 tok/s)
+strata-q36: hybrid experts: 15097 of 26240 batch entries on the GPU (57.5%), 11143 on the CPU pool in 547 ms, 1947 slot replacements

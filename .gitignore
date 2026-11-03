@@ -1,0 +1,14 @@
+# Local plans are intentionally not published.
+/plan.md
+/plan.2026-11-01.archive.md
+
+# Generated dependencies, weights, caches and builds.
+.venv*/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+/models/
+*.gguf
+*.safetensors
+*.pack
+third_party/Strata/build*/
