@@ -4,12 +4,19 @@
 
 > **研发状态：实验项目。** 纯扩散、AR 和扩散草稿验证具有不同语义。本项目尚未在 12 GB 显存机器上实现或验证稳定的 120+ tokens/s 块扩散；输出质量、长上下文及官方后端的整模型数值对齐仍在研究中。
 >
-> 
-> clover原生模型未做优化版的生成速度：
+>
+>
+>
+
+clover原生模型未做优化版的生成速度,在3080Ti上大约15t/s：
+
 > <img width="922" height="668" alt="截屏2026-11-03 14 29 28" src="https://github.com/user-attachments/assets/e9d55c1e-7953-4157-a2cf-ef3f968c1ae8" />
 >
 > 
-> 本方案生成速度：
+>
+>
+
+本方案生成速度,在3080Ti上超过120t/s：
 
 <img width="1176" height="802" alt="截屏2026-11-03 14 41 27" src="https://github.com/user-attachments/assets/1dd0a56c-e205-4988-b142-993a3c25231e" />
 
